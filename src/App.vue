@@ -1,17 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+  <!-- <linearRegression />
+  <div id="chart"></div>
+  <div id="chartNonLinear"></div> -->
+  <dinoTime1 />
+  <!-- <trexComp /> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import dinoTime1 from "./components/dinoTime.vue";
+import linearRegression from "./components/linearRegression.vue";
+//import an html file as a component
+/*eslint-disable*/
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    dinoTime1,
+    linearRegression,
+  },
+};
 </script>
 
 <style>
