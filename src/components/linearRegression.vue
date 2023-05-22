@@ -70,7 +70,7 @@ export default {
     // Train the non-linear model
 
     // Make predictions using the linear model
-    const predictedValuesLinear = predictLinear(X_test);
+    // const predictedValuesLinear = predictLinear(X_test);
 
     // Convert tensors to arrays for plotting
     const X_testArray = Array.from(X_test.dataSync());
@@ -108,23 +108,23 @@ export default {
 
     Plotly.newPlot("chart", data, layout);
 
-    // Print the predicted values and the ground truth values
-    console.log("Predicted Values:");
-    //print test values and predicted values
-    for (let i = 0; i < X_testArray.length; i++) {
-      console.log(`X: ${X_testArray[i]}, Ground Truth: ${y_testArray[i]}, Predicted: ${predictedValuesArray[i]}`);
-    }
+    // // Print the predicted values and the ground truth values
+    // console.log("Predicted Values:");
+    // //print test values and predicted values
+    // for (let i = 0; i < X_testArray.length; i++) {
+    //   console.log(`X: ${X_testArray[i]}, Ground Truth: ${y_testArray[i]}, Predicted: ${predictedValuesArray[i]}`);
+    // }
 
-    //do an accuracy test
-    const accuracy = tf.losses.meanSquaredError(y_test, predictedValuesLinear);
-    console.log("accuracy", accuracy);
-    //accuracy in percentage
-    console.log("accuracy", accuracy.dataSync()[0].toFixed(2));
-    //plot the accuracy in the center of the plot
-    const accuracyDiv = document.createElement("div");
-    accuracyDiv.innerHTML = `Accuracy: ${accuracy.dataSync()[0].toFixed(2)}`;
+    // //do an accuracy test
+    // const accuracy = tf.losses.meanSquaredError(y_test, predictedValuesLinear);
+    // console.log("accuracy", accuracy);
+    // //accuracy in percentage
+    // console.log("accuracy", accuracy.dataSync()[0].toFixed(2));
+    // //plot the accuracy in the center of the plot
+    // const accuracyDiv = document.createElement("div");
+    // accuracyDiv.innerHTML = `Accuracy: ${accuracy.dataSync()[0].toFixed(2)}`;
 
-    document.getElementById("chart").appendChild(accuracyDiv);
+    // document.getElementById("chart").appendChild(accuracyDiv);
   },
 };
 </script>

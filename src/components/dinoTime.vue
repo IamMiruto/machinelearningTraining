@@ -32,84 +32,84 @@ export default {
     return {};
   },
 
-  mounted() {
-    console.log("mounted");
-    //print tf backend
-    console.log("tf backend", tf.getBackend());
-    // initializeTensorFlow();
-    let runner = null;
-    // initial setup for the game the  setup function is called when the dom gets loaded
+  // mounted() {
+  //   console.log("mounted");
+  //   //print tf backend
+  //   console.log("tf backend", tf.getBackend());
+  //   // initializeTensorFlow();
+  //   let runner = null;
+  //   // initial setup for the game the  setup function is called when the dom gets loaded
 
-    function setup() {
-      // Initialize the game Runner.
-      runner = new Runner(".game", {
-        DINO_COUNT: 1,
-        onReset: handleReset,
-        onCrash: handleCrash,
-        onRunning: handleRunning,
-        speed: 100,
-      });
+  //   function setup() {
+  //     // Initialize the game Runner.
+  //     runner = new Runner(".game", {
+  //       DINO_COUNT: 1,
+  //       onReset: handleReset,
+  //       onCrash: handleCrash,
+  //       onRunning: handleRunning,
+  //       speed: 100,
+  //     });
 
-      window.runner = runner;
-      // Initialize everything in the game and start the game.
-      runner.init();
-    }
+  //     window.runner = runner;
+  //     // Initialize everything in the game and start the game.
+  //     runner.init();
+  //   }
 
-    let firstTime = true;
-    function handleReset(dinos) {
-      // running this for single dino at a time
-      // console.log(dinos);
+  //   let firstTime = true;
+  //   function handleReset(dinos) {
+  //     // running this for single dino at a time
+  //     // console.log(dinos);
 
-      const dino = dinos[0];
-      // if the game is being started for the first time initiate
-      // the model and compile it to make it ready for training and predicting
-      if (firstTime) {
-        // object which will containn training data and appropriate labels
-        dino.training = {
-          inputs: [],
-          labels: [],
-        };
-      } else {
-        // hello from here
-        // Train the model before restarting. asdfasdfasdf
-        //every time use the last state of the dino as the first state of the dino
-      }
-    }
+  //     const dino = dinos[0];
+  //     // if the game is being started for the first time initiate
+  //     // the model and compile it to make it ready for training and predicting
+  //     if (firstTime) {
+  //       // object which will containn training data and appropriate labels
+  //       dino.training = {
+  //         inputs: [],
+  //         labels: [],
+  //       };
+  //     } else {
+  //       // hello from here
+  //       // Train the model before restarting. asdfasdfasdf
+  //       //every time use the last state of the dino as the first state of the dino
+  //     }
+  //   }
 
-    /**
-     * documentation
-     * @param {object} dino
-     * @param {object} state
-     * returns a promise resolved with an action
-     */
-    let stepBeforeCrash = [];
-    let lebelBeforeCrash = [];
+  //   /**
+  //    * documentation
+  //    * @param {object} dino
+  //    * @param {object} state
+  //    * returns a promise resolved with an action
+  //    */
+  //   let stepBeforeCrash = [];
+  //   let lebelBeforeCrash = [];
 
-    function handleRunning(dino, state) {}
-    /**
-     *
-     * @param {object} dino
-     * handles the crash of a dino before restarting the game
-     *
-     */
+  //   function handleRunning(dino, state) {}
+  //   /**
+  //    *
+  //    * @param {object} dino
+  //    * handles the crash of a dino before restarting the game
+  //    *
+  //    */
 
-    function handleCrash(dino) {}
+  //   function handleCrash(dino) {}
 
-    /**
-     *
-     * @param {object} state
-     * returns an array
-     * converts state to a feature scaled array
-     */
-    function convertStateToVector(state) {}
-    // call setup on loading content
-    document.addEventListener("DOMContentLoaded", setup);
+  //   /**
+  //    *
+  //    * @param {object} state
+  //    * returns an array
+  //    * converts state to a feature scaled array
+  //    */
+  //   function convertStateToVector(state) {}
+  //   // call setup on loading content
+  //   document.addEventListener("DOMContentLoaded", setup);
 
-    // show mouse position on screen for debugging
-    document.addEventListener("mousemove", (e) => {
-      document.getElementById("mouseX").innerHTML = e.clientX;
-      document.getElementById("mouseY").innerHTML = e.clientY;
-    });
-  },
+  //   // show mouse position on screen for debugging
+  //   document.addEventListener("mousemove", (e) => {
+  //     document.getElementById("mouseX").innerHTML = e.clientX;
+  //     document.getElementById("mouseY").innerHTML = e.clientY;
+  //   });
+  // },
 };
 </script>
