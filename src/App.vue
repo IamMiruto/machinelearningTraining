@@ -1,9 +1,9 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-  <!-- <linearRegression />
+  <linearRegression />
   <div id="chart"></div>
-  <div id="chartNonLinear"></div> -->
-  <dinoTime1 />
+  <div id="chartNonLinear"></div>
+  <!-- <dinoTime1 /> -->
   <!-- <trexComp /> -->
 </template>
 
